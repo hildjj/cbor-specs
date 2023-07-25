@@ -2,4 +2,4 @@
 
 CBOR specs maintained by Joe Hildebrand:
 
-- [regexp](regex.md) CBOR Tag for ECMAScript RegExps
+- [regexp](regexp.md) CBOR Tag for ECMAScript RegExps
