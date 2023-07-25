@@ -54,6 +54,11 @@ const r = /foo/gu;
 const tag = new Tag(TBD, [r.source, r.flags]);
 
 // Decoding:
+// (Note: tag.value is an array of 1 or 2 items.  If only one, the constructor
+// will get `undefined` for the flags using this approach, which is fine.)
+if (tag.value.length < 1 || tag.value.length > 2) {
+    throw new RangeError('Invalid array size for tag TBD converting to RegExp');
+}
 const r = new RegExp(...tag.value);
 ```
 
