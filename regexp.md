@@ -4,7 +4,7 @@ This document specifies a tag for a ECMAScript [1] RegExp (Regular Expression) i
 
     Tag: TBD (Suggested: 48)
     Data item: Array[UTF8string, UTF8string?]
-    Semantics: ECMAScript RegExp [ECMA-262, section 22.2](https://262.ecma-international.org/14.0/#sec-regexp-regular-expression-objects)
+    Semantics: ECMAScript RegExp https://262.ecma-international.org/14.0/#sec-regexp-regular-expression-objects
     Point of contact: Joe Hildebrand <joe-ietf@cursive.net>
     Description of semantics: https://github.com/hildjj/cbor-specs/blob/master/regexp.md
 
