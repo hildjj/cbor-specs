@@ -21,10 +21,11 @@ ECMAScript.
 
 Tag 48 is applied to an array containing one or two strings.  The first string
 is always the regular expression `pattern`, which can be obtained from an
-ECMAScript RegExp object with the `source` property.  The first string SHOULD
-NOT be empty (`""`).  To signal the empty regular expression, ECMAScript-262
+ECMAScript RegExp object with the `source` property.  The first string should
+not be empty (`""`).  To signal the empty regular expression, ECMAScript-262
 recommends `"(?:)"`.  Note however, that an empty string does not cause
-problems in practice.
+problems in practice, since the RegExp constructor will accept an empty string
+(whereas the slash syntax "/foo/gu" does not).
 
 If the second string is specified in the array, it represents zero or more
 single-letter flags that modify the function of the regular expression.  The
