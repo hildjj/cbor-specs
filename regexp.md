@@ -83,11 +83,13 @@ This document greatly restricts the form of regular expressions that are
 supported, and makes clear how to handle the flags that alter regular
 expression usage in relatively important ways.
 
-## References
+## Normative References
 
 [1] [ECMA-262] Ecma International, "ECMAScript® 2023 Language Specification", Standard ECMA-262, <https://262.ecma-international.org/>.
 
 [2] C. Bormann, and P. Hoffman. "Concise Binary Object Representation (CBOR)". RFC 8949, December 2020. <https://www.rfc-editor.org/rfc/rfc8949.html>
+
+## Informative References
 
 [3] C. Bormann, and P. Hoffman. "Concise Binary Object Representation (CBOR)". RFC 7049, October 2013. https://www.rfc-editor.org/rfc/rfc7049.html
 
