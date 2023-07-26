@@ -2,7 +2,7 @@
 
 This document specifies a tag for a ECMAScript [1] RegExp (Regular Expression) in Concise Binary Object Representation (CBOR) [2].
 
-    Tag: TBD (Suggested: 48)
+    Tag: TBD (Suggested: 279)
     Data item: Array[UTF8string, UTF8string?]
     Semantics: ECMAScript RegExp https://262.ecma-international.org/14.0/#sec-regexp-regular-expression-objects
     Point of contact: Joe Hildebrand <joe-ietf@cursive.net>
@@ -19,20 +19,26 @@ ECMAScript.
 
 ## Semantics
 
-Tag 48 is applied to an array containing one or two strings.  The first string
+Tag 279 is applied to an array containing one or two strings.  The first string
 is always the regular expression `pattern`, which can be obtained from an
 ECMAScript RegExp object with the `source` property.  The first string should
 not be empty (`""`).  To signal the empty regular expression, ECMAScript-262
 recommends `"(?:)"`.  Note however, that an empty string does not cause
 problems in practice, since the RegExp constructor will accept an empty string
-(whereas the slash syntax "/foo/gu" does not).
+(whereas the slash syntax "/foo/gu" does not).  If the first element of the
+array is any type other than UTF8String, the RegExp constructor will first
+apply String() to its first argument, with sometimes surprising, but not
+catastrophic results.
 
 If the second string is specified in the array, it represents zero or more
 single-letter flags that modify the function of the regular expression.  The
 flags can be obtained from an ECMAScript RegExp object with the `flags`
 property.  Note that in ECMAScript RegExps, the order of flags is not
 significant.  The second string may be absent, which is equivalent to
-`undefined`.  It may also be an empty string (`""`).
+`undefined`.  It may also be an empty string (`""`).  If the second element of
+the array is anything other than not present, undefined, or a string
+consisting of currently-valid flags, the RegExp constructor will correctly
+throw an exception.
 
 When decoding, if the first element of the array is not a string, signal an
 error.  If the first element is the empty string, it is safe to pass into the
@@ -52,7 +58,7 @@ capability signaling in the protocol.
 ```js
 // Encoding:
 const r = /foo/gu;
-const tag = new Tag(TBD, [r.source, r.flags]);
+const tag = new Tag(279, [r.source, r.flags]);
 
 // Decoding:
 // (Note: tag.value is an array of 1 or 2 items.  If only one, the constructor
