@@ -6,7 +6,7 @@ This document specifies a tag for a ECMAScript [1] RegExp (Regular Expression) i
     Data item: Array[UTF8string, UTF8string?]
     Semantics: ECMAScript RegExp https://262.ecma-international.org/14.0/#sec-regexp-regular-expression-objects
     Point of contact: Joe Hildebrand <joe-ietf@cursive.net>
-    Description of semantics: https://github.com/hildjj/cbor-specs/blob/master/regexp.md
+    Description of semantics: https://github.com/hildjj/cbor-specs/blob/main/regexp.md
 
 ## Motivation
 
