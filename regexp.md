@@ -2,7 +2,7 @@
 
 This document specifies a tag for a ECMAScript [1] RegExp (Regular Expression) in Concise Binary Object Representation (CBOR) [2].
 
-    Tag: TBD (Suggested: 279)
+    Tag: TBD (Suggested: 21066)
     Data item: Array[UTF8string, UTF8string?]
     Semantics: ECMAScript RegExp https://262.ecma-international.org/14.0/#sec-regexp-regular-expression-objects
     Point of contact: Joe Hildebrand <joe-ietf@cursive.net>
@@ -19,7 +19,7 @@ ECMAScript.
 
 ## Semantics
 
-Tag 279 is applied to an array containing one or two strings.  The first string
+Tag 21066 is applied to an array containing one or two strings.  The first string
 is always the regular expression `pattern`, which can be obtained from an
 ECMAScript RegExp object with the `source` property.  The first string should
 not be empty (`""`).  To signal the empty regular expression, ECMAScript-262
@@ -58,13 +58,13 @@ capability signaling in the protocol.
 ```js
 // Encoding:
 const r = /foo/gu;
-const tag = new Tag(279, [r.source, r.flags]);
+const tag = new Tag(21066, [r.source, r.flags]);
 
 // Decoding:
 // (Note: tag.value is an array of 1 or 2 items.  If only one, the constructor
 // will get `undefined` for the flags using this approach, which is fine.)
 if (tag.value.length < 1 || tag.value.length > 2) {
-    throw new RangeError('Invalid array size for tag TBD converting to RegExp');
+    throw new RangeError('Invalid array size for tag 21066 converting to RegExp');
 }
 const r = new RegExp(...tag.value);
 ```
