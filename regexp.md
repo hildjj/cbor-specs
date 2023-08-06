@@ -2,7 +2,7 @@
 
 This document specifies a tag for a ECMAScript [1] RegExp (Regular Expression) in Concise Binary Object Representation (CBOR) [2].
 
-    Tag: TBD (Suggested: 21066)
+    Tag: 21066
     Data item: Array[UTF8string, UTF8string?]
     Semantics: ECMAScript RegExp https://262.ecma-international.org/14.0/#sec-regexp-regular-expression-objects
     Point of contact: Joe Hildebrand <joe-ietf@cursive.net>
